@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>views/Start.qml</file>
+        <file>views/Board.qml</file>
+        <file>views/Mixer.qml</file>
+        <file>views/Splash.qml</file>
+    </qresource>
+</RCC>
