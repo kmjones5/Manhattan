@@ -1,6 +1,6 @@
 #ifndef UIMANAGER_GLOBAL_H
 #define UIMANAGER_GLOBAL_H
-#include <QObject>
+#include <qobject.h>
 #include <QtCore/qglobal.h>
 
 #if defined(UIMANAGER_LIBRARY)
@@ -21,6 +21,7 @@ public:
     /* enum definitions here */
     enum AppView{
         Start,
+        BtSelect,
         Board,
         Mixer,
         Splash

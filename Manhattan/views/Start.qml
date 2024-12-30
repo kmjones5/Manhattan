@@ -3,6 +3,8 @@ import QtQuick.Window 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
 import uimanager.enums 1.0
+import "../images"
+import "../widgets"
 
 Item {
     id: startView
@@ -12,7 +14,7 @@ Item {
         id: divider1
         height: parent.height-20
         width: 1
-        color: "white"
+        color: "transparent"//"#030087"
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         anchors.leftMargin: parent.width/3
@@ -22,7 +24,7 @@ Item {
         id: divider2
         height: parent.height-20
         width: 1
-        color: "white"
+        color: "transparent"//"#030087"
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: parent.width/3
@@ -36,6 +38,12 @@ Item {
 
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
+
+        // Image {
+        //     id: boardIcon
+        //     source: "../images/soundIcon.png"
+        //     anchors.centerIn: boardRect
+        // }
 
         MouseArea{
             anchors.fill: boardRect
@@ -52,9 +60,15 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: boardRect.right
 
+        Image {
+            id: mixer
+            source: "../images/bluetooth150.png"
+            anchors.centerIn: mixerRect
+        }
+
         MouseArea{
             anchors.fill: mixerRect
-            onClicked: uimgr.setView(UiMgrEnums.Mixer)
+            onClicked: uimgr.setView(UiMgrEnums.BtSelect)
         }
     }
 

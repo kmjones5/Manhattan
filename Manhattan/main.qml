@@ -8,11 +8,11 @@ import uimanager.enums 1.0
 
 Window {
     id: window
-    width: 800
-    height: 480
+    width: 1024
+    height: 600
     visible: true
     title: qsTr("Manhattan Project")
-    color: "black"
+    color: "blue"
 
     property int view: uimgr.currentView
 
@@ -32,9 +32,12 @@ Window {
 
         case UiMgrEnums.Mixer:
             appView.setSource("views/Mixer.qml")
+            break;
+
+        case UiMgrEnums.Splash:
+            appView.setSource("widgets/SpeedoBase.qml", {"width":300, "height":300} )
         }
     }
-
     /**************************************/
 
     /* wrapper begins */
