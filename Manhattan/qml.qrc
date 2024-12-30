@@ -53,5 +53,6 @@
         <file>widgets/images/star3.png</file>
         <file>images/bluetooth150.png</file>
         <file>PUDs/BtSelectPUD.qml</file>
+        <file>Buttons/BaseBtn.qml</file>
     </qresource>
 </RCC>

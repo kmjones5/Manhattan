@@ -1,9 +1,9 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.12
-// import QtGraphicalEffects
 import QtQuick.Controls 2.15
 import uimanager.enums 1.0
+import "PUDs"
 
 
 Window {
@@ -24,6 +24,10 @@ Window {
         {
         case UiMgrEnums.Start:
             appView.setSource("views/Start.qml")
+            break;
+
+        case UiMgrEnums.BtSelect:
+            btPud.open()
             break;
 
         case UiMgrEnums.Board:
@@ -85,49 +89,21 @@ Window {
             source: "views/Start.qml"
         }
 
-        // states:[
-        //     State{
-        //         name: "start"
-        //         when: window.view == UiMgrEnums.Start
-
-        //         PropertyChanges{
-        //             target: appView
-        //             source: "views/Start.qml"
-        //         }
-        //     },
-
-        //     State{
-        //         name: "board"
-        //         when: window.view == UiMgrEnums.Board
-
-        //         PropertyChanges{
-        //             target: appView
-        //             source: "views/Board.qml"
-        //         }
-        //     },
-
-        //     State{
-        //         name: "mixer"
-        //         when: window.view == UiMgrEnums.Mixer
-
-        //         PropertyChanges{
-        //             target: appView
-        //             source: "views/Mixer.qml"
-        //         }
-        //     },
-
-        //     State{
-        //         name: "Splash"
-        //         when: window.view == UiMgrEnums.Splash
-
-        //         PropertyChanges{
-        //             target: appView
-        //             source: "views/Splash.qml"
-        //         }
-        //     }
-
-        // ]
-
     }
 
+    BtSelectPUD{
+        id: btPud
+        anchors.centerIn: Overlay.overlay
+        onCancelPressed:{
+            //TODO
+            btPud.close()
+            // uimgr.setView(UiMgrEnums.Start)
+        }
+
+        onConnectPressed:{
+            //TODO
+            btPud.close()
+            // uimgr.setView(UiMgrEnums.Start)
+        }
+    }
 }
